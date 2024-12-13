@@ -9,15 +9,21 @@ To write a program to implement the K Means Clustering for Customer Segmentation
 
 ## Algorithm
 ```
-1.Import the necessary packages using import statement.
+step 1: Load the customer data into a Pandas DataFrame.
 
-2.Read the given csv file using read_csv() method and print the number of contents to be displayed using df.head().
+step 2: Select relevant features for clustering (e.g., annual income, spending score).
 
-3.Import KMeans and use for loop to cluster the data.
+step 3: Standardize the features to ensure equal importance.
 
-4.Predict the cluster and plot data graphs.
+step 4: Use the Elbow Method to find the optimal number of clusters.
 
-5.Print the outputs and end the program
+step 5: Create a K-Means clustering model with the chosen number of clusters.
+
+step 6: Fit the model to the scaled data.
+
+step 7: Assign cluster labels to each data point.
+
+step 8:Analyze the characteristics of each cluster to gain insights into customer segments.
 ```
 ## Program:
 ```
@@ -30,8 +36,11 @@ RegisterNumber:  212223240084
 import pandas as pd
 import matplotlib.pyplot as plt
 data=pd.read_csv("Mall_Customers.csv")
+print("data.head()")
 data.head()
+print("data.info()")
 data.info()
+print("data.isnull()")
 data.isnull().sum()
 from sklearn.cluster import KMeans
 wcss=[]
